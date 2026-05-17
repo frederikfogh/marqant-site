@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8" />
+<title>Marqant — Consulting</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Marqant Consulting — markant rådgivning i strategi, brand og forretning. København, est. MMXXV." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper: #ece2c8;
+    --paper-2: #e3d7b8;
+    --sumi: #1a1612;
+    --seal: #c2552f;
+    --foret: #0f4a3a;
+    --dim: rgba(26,22,18,0.55);
+    --fade: rgba(26,22,18,0.32);
+    --rule: rgba(26,22,18,0.16);
+    --display: 'Spectral', 'Times New Roman', serif;
+    --mono: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper);
+    color: var(--sumi);
+    font-family: var(--display);
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--seal); color: var(--paper); }
+  a { color: inherit; text-decoration: none; }
+  .mono { font-family: var(--mono); font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; font-size: 11px; }
+  .container { max-width: 1320px; margin: 0 auto; padding: 0 48px; }
+  .rule { border-top: 1px solid var(--rule); }
+
+  /* ─── Wordmark ─── */
+  .wm { font-family: var(--display); font-weight: 300; line-height: 0.92; letter-spacing: -0.028em; color: var(--sumi); display: inline-block; white-space: nowrap; }
+  .wm i { font-style: italic; color: var(--seal); font-weight: 300; }
+  .lockup { display: inline-block; }
+  .lockup .desc {
+    font-family: var(--display); font-style: italic; font-weight: 400;
+    color: var(--seal); text-align: right;
+    letter-spacing: 0.01em;
+    line-height: 1;
+  }
+
+  /* ─── NAV ─── */
+  nav.top {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(236,226,200,0.92);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--rule);
+  }
+  nav.top .row { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+  nav.top .wm { font-size: 22px; }
+  nav.top .lockup .desc { font-size: 11px; margin-top: -2px; }
+  nav.top ul { display: flex; gap: 36px; list-style: none; padding: 0; margin: 0; }
+  nav.top ul a { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sumi); transition: color 0.2s; }
+  nav.top ul a:hover { color: var(--seal); }
+  nav.top .cta {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+    border: 1px solid var(--sumi); padding: 10px 18px; transition: all 0.2s;
+  }
+  nav.top .cta:hover { background: var(--sumi); color: var(--paper); }
+
+  /* ─── HERO ─── */
+  .hero { padding: 140px 0 120px; position: relative; }
+  .hero .eyebrow { display: flex; align-items: center; gap: 14px; color: var(--dim); margin-bottom: 56px; }
+  .hero .eyebrow .dot { width: 6px; height: 6px; background: var(--seal); border-radius: 50%; }
+  .hero h1 {
+    font-family: var(--display); font-weight: 300;
+    font-size: clamp(56px, 8.4vw, 132px);
+    line-height: 0.96;
+    letter-spacing: -0.034em;
+    margin: 0;
+    text-wrap: pretty;
+    max-width: 12ch;
+  }
+  .hero h1 em { font-style: italic; color: var(--seal); font-weight: 300; }
+  .hero .sub {
+    margin-top: 56px;
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 80px;
+    border-top: 1px solid var(--sumi);
+    padding-top: 28px;
+  }
+  .hero .sub p {
+    margin: 0;
+    font-family: var(--display); font-weight: 300; font-style: italic;
+    font-size: 22px; line-height: 1.45;
+    color: var(--sumi);
+    max-width: 30ch;
+  }
+  .hero .sub .meta { color: var(--dim); }
+  .hero .sub .meta div + div { margin-top: 6px; }
+  .hero .scroll {
+    position: absolute; bottom: 40px; left: 48px;
+    display: flex; align-items: center; gap: 12px;
+    color: var(--dim);
+  }
+  .hero .scroll .v {
+    width: 1px; height: 32px; background: var(--seal);
+    animation: drop 2.2s ease-in-out infinite;
+    transform-origin: top;
+  }
+  @keyframes drop { 0%,100% { transform: scaleY(0.2); } 50% { transform: scaleY(1); } }
+
+  /* ─── MANIFEST ─── */
+  .manifest { padding: 120px 0; border-top: 1px solid var(--sumi); }
+  .manifest .grid { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start; }
+  .manifest h2 { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; margin: 0 0 8px; color: var(--sumi); font-weight: 500; }
+  .manifest .lead {
+    font-family: var(--display); font-weight: 300;
+    font-size: clamp(28px, 3.4vw, 48px);
+    line-height: 1.18;
+    letter-spacing: -0.012em;
+    margin: 0;
+    text-wrap: pretty;
+  }
+  .manifest .lead em { font-style: italic; color: var(--seal); font-weight: 300; }
+
+  /* ─── PRACTICE ─── */
+  .practice { padding: 120px 0; border-top: 1px solid var(--rule); }
+  .practice .head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 64px; }
+  .practice h2 {
+    font-family: var(--display); font-weight: 300;
+    font-size: clamp(40px, 5vw, 72px);
+    letter-spacing: -0.024em; line-height: 1;
+    margin: 0;
+  }
+  .practice h2 em { font-style: italic; color: var(--seal); font-weight: 300; }
+  .practice .items {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--sumi);
+  }
+  .practice .item {
+    padding: 36px 28px 40px 0;
+    border-right: 1px solid var(--rule);
+  }
+  .practice .item:last-child { border-right: 0; padding-right: 0; }
+  .practice .item .ix { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; color: var(--seal); margin-bottom: 28px; }
+  .practice .item h3 {
+    font-family: var(--display); font-weight: 300;
+    font-size: 26px; line-height: 1.18; letter-spacing: -0.012em;
+    margin: 0 0 16px;
+  }
+  .practice .item h3 em { font-style: italic; color: var(--seal); font-weight: 300; }
+  .practice .item p {
+    font-family: var(--display); font-weight: 300;
+    font-size: 15px; line-height: 1.55; color: var(--dim);
+    margin: 0;
+    text-wrap: pretty;
+  }
+
+  /* ─── APPROACH ─── */
+  .approach { padding: 120px 0; border-top: 1px solid var(--sumi); background: var(--paper-2); }
+  .approach .head { margin-bottom: 64px; }
+  .approach .label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--dim); margin-bottom: 14px; }
+  .approach h2 {
+    font-family: var(--display); font-weight: 300;
+    font-size: clamp(40px, 5vw, 72px);
+    letter-spacing: -0.024em; line-height: 1.02; margin: 0;
+    max-width: 18ch;
+  }
+  .approach h2 em { font-style: italic; color: var(--seal); font-weight: 300; }
+  .approach .steps {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+    border-top: 1px solid var(--sumi);
+  }
+  .approach .step { padding: 40px 32px 48px 0; border-right: 1px solid var(--rule); position: relative; }
+  .approach .step:last-child { border-right: 0; padding-right: 0; }
+  .approach .step .num {
+    font-family: var(--display); font-weight: 300; font-size: 72px;
+    color: var(--seal); line-height: 1; letter-spacing: -0.04em;
+    font-style: italic;
+    margin-bottom: 24px;
+  }
+  .approach .step h3 {
+    font-family: var(--display); font-weight: 400;
+    font-size: 28px; letter-spacing: -0.014em; line-height: 1.1;
+    margin: 0 0 14px;
+  }
+  .approach .step p {
+    font-family: var(--display); font-weight: 300;
+    font-size: 16px; line-height: 1.55; color: var(--sumi);
+    opacity: 0.78; margin: 0;
+    text-wrap: pretty;
+  }
+
+  /* ─── ABOUT ─── */
+  .about { padding: 120px 0; border-top: 1px solid var(--sumi); }
+  .about .grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 96px; align-items: end; }
+  .about .label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--dim); margin-bottom: 16px; }
+  .about p {
+    font-family: var(--display); font-weight: 300;
+    font-size: clamp(20px, 2.2vw, 28px); line-height: 1.45;
+    letter-spacing: -0.004em;
+    margin: 0;
+    text-wrap: pretty;
+  }
+  .about p em { font-style: italic; color: var(--seal); font-weight: 300; }
+  .about .signature {
+    margin-top: 56px;
+    display: flex; align-items: baseline; gap: 18px;
+  }
+  .about .signature .who { font-family: var(--display); font-style: italic; font-size: 18px; color: var(--sumi); }
+  .about .signature .role { font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em; color: var(--dim); text-transform: uppercase; }
+
+  /* ─── CONTACT ─── */
+  .contact { padding: 140px 0 120px; border-top: 1px solid var(--sumi); background: var(--sumi); color: var(--paper); position: relative; overflow: hidden; }
+  .contact ::selection { background: var(--seal); color: var(--paper); }
+  .contact .eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(236,226,200,0.55); margin-bottom: 48px; display: flex; align-items: center; gap: 14px; }
+  .contact .eyebrow .dot { width: 6px; height: 6px; background: var(--seal); border-radius: 50%; }
+  .contact h2 {
+    font-family: var(--display); font-weight: 300;
+    font-size: clamp(48px, 7vw, 112px);
+    letter-spacing: -0.032em; line-height: 0.98;
+    margin: 0 0 64px;
+    max-width: 14ch;
+    text-wrap: pretty;
+  }
+  .contact h2 em { font-style: italic; color: var(--seal); font-weight: 300; }
+  .contact h2 a:hover em { color: #de6c44; }
+  .contact .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; border-top: 1px solid rgba(236,226,200,0.18); padding-top: 36px; }
+  .contact .col .label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(236,226,200,0.45); margin-bottom: 10px; }
+  .contact .col .val { font-family: var(--display); font-weight: 300; font-size: 22px; line-height: 1.3; letter-spacing: -0.004em; }
+  .contact .col .val a:hover { color: var(--seal); }
+
+  /* ─── FOOTER (kolofon) ─── */
+  footer.kolofon {
+    background: var(--sumi); color: rgba(236,226,200,0.6);
+    border-top: 1px solid rgba(236,226,200,0.18);
+    padding: 28px 0;
+  }
+  footer.kolofon .row { display: flex; justify-content: space-between; align-items: center; gap: 24px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; }
+  footer.kolofon .left { display: flex; gap: 20px; align-items: center; }
+  footer.kolofon .right { display: flex; gap: 20px; align-items: center; }
+  footer.kolofon .wm { font-size: 14px; color: var(--paper); }
+  footer.kolofon .wm i { color: var(--seal); }
+
+  /* ─── Holding-strip ─── */
+  .holding {
+    background: var(--seal); color: var(--paper);
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    padding: 8px 0; text-align: center;
+  }
+
+  @media (max-width: 900px) {
+    .container { padding: 0 28px; }
+    nav.top ul { display: none; }
+    .manifest .grid { grid-template-columns: 1fr; gap: 32px; }
+    .practice .items { grid-template-columns: 1fr 1fr; }
+    .practice .item { border-right: none; border-bottom: 1px solid var(--rule); padding: 28px 0; }
+    .approach .steps { grid-template-columns: 1fr; }
+    .approach .step { border-right: none; border-bottom: 1px solid var(--rule); padding: 28px 0 36px; }
+    .about .grid { grid-template-columns: 1fr; gap: 32px; }
+    .contact .grid { grid-template-columns: 1fr; gap: 28px; }
+    .hero .sub { flex-direction: column; gap: 28px; }
+    footer.kolofon .row { flex-direction: column; gap: 14px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="holding">Holdingside · fuld site lanceres efteråret 2026</div>
+
+<nav class="top">
+  <div class="container row">
+    <a href="#" class="lockup">
+      <span class="wm">Mar<i>q</i>ant</span>
+      <div class="desc">Consulting</div>
+    </a>
+    <ul>
+      <li><a href="#manifest">Manifest</a></li>
+      <li><a href="#practice">Praksis</a></li>
+      <li><a href="#approach">Tilgang</a></li>
+      <li><a href="#about">Om</a></li>
+    </ul>
+    <a href="#contact" class="cta">Skriv til os</a>
+  </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow mono">
+      <span class="dot"></span>
+      <span>Marqant Consulting · København · Est. MMXXV</span>
+    </div>
+    <h1>Markante valg.<br/>Holdbare resultater.</h1>
+    <div class="sub">
+      <p>Vi rådgiver direktioner og bestyrelser der vil stå tydeligt — uden at miste fodfæste i forretningen.</p>
+      <div class="meta mono">
+        <div>01 · Strategi</div>
+        <div>02 · Brand</div>
+        <div>03 · Rådgivning</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll mono">
+    <span class="v"></span>
+    <span>Læs videre</span>
+  </div>
+</section>
+
+<!-- ─── MANIFEST ─── -->
+<section class="manifest" id="manifest">
+  <div class="container grid">
+    <div>
+      <h2>Manifest</h2>
+      <div class="mono" style="color: var(--dim);">01 / 05</div>
+    </div>
+    <p class="lead">
+      At være <em>markant</em> handler ikke om at råbe højest. Det handler om at vælge skarpere, sige mindre, og stå ved sin position — også når den koster. Vi hjælper ledere med at finde den position, formulere den, og bygge en virksomhed der kan bære den.
+    </p>
+  </div>
+</section>
+
+<!-- ─── PRACTICE ─── -->
+<section class="practice" id="practice">
+  <div class="container">
+    <div class="head">
+      <h2>Vores <em>praksis</em></h2>
+      <div class="mono" style="color: var(--dim);">02 / 05</div>
+    </div>
+    <div class="items">
+      <div class="item">
+        <div class="ix">01</div>
+        <h3>Strategi &amp; <em>retning</em></h3>
+        <p>Vi læser markedet, organisationen og menneskene — og hjælper ledelsen med at træffe de få valg der reelt flytter retningen.</p>
+      </div>
+      <div class="item">
+        <div class="ix">02</div>
+        <h3>Brand- <em>arkitektur</em></h3>
+        <p>Positionering, brand-platform, navngivning og portefølje. Vi bygger brands der ikke kun ser markante ud — de er det også.</p>
+      </div>
+      <div class="item">
+        <div class="ix">03</div>
+        <h3>Bestyrelses- <em>sparring</em></h3>
+        <p>Den fortrolige stemme i bestyrelseslokalet. Forberedelse, udfordring, oversættelse mellem ejere, ledelse og marked.</p>
+      </div>
+      <div class="item">
+        <div class="ix">04</div>
+        <h3>Identitet &amp; <em>udtryk</em></h3>
+        <p>Visuel og verbal identitet i samarbejde med strategien. Vi designer ikke for at pynte — vi designer for at gøre positionen synlig.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── APPROACH ─── -->
+<section class="approach" id="approach">
+  <div class="container">
+    <div class="head">
+      <div class="label">03 / 05 · Tilgang</div>
+      <h2>Tre bevægelser. <em>Færre slides</em>.</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">i.</div>
+        <h3>Læs</h3>
+        <p>Vi starter med at læse. Forretningen, kategorien, menneskene, og det der ikke bliver sagt på møderne. To til fire uger, sjældent længere.</p>
+      </div>
+      <div class="step">
+        <div class="num">ii.</div>
+        <h3>Form</h3>
+        <p>Vi former en kort, skarp retning. Få sider. Ord der kan bæres ind i en bestyrelse og overleve et godt spørgsmål.</p>
+      </div>
+      <div class="step">
+        <div class="num">iii.</div>
+        <h3>Sæt</h3>
+        <p>Vi følger med ind i organisationen og sætter retningen — i kommunikation, identitet, og de første konkrete bevægelser. Indtil det holder.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ABOUT ─── -->
+<section class="about" id="about">
+  <div class="container grid">
+    <div>
+      <div class="label">04 / 05 · Om</div>
+      <div class="lockup">
+        <span class="wm" style="font-size: 64px;">Mar<i>q</i>ant</span>
+        <div class="desc" style="font-size: 14px; margin-top: -2px;">Consulting</div>
+      </div>
+    </div>
+    <div>
+      <p>
+        Marqant er et lille rådgivningshus i København. Vi arbejder med få kunder ad gangen — typisk ejerledere, direktioner og bestyrelser i virksomheder mellem 50 og 1.500 medarbejdere, der står ved et <em>vendepunkt</em>: en ny strategi, et generationsskifte, en kategori der flytter sig.
+      </p>
+      <div class="signature">
+        <div class="who">— Grundlagt MMXXV</div>
+        <div class="role">København / Hellerup</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ─── -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="eyebrow">
+      <span class="dot"></span>
+      <span>05 / 05 · Kontakt</span>
+    </div>
+    <h2>
+      Skriv til os på <a href="mailto:hello@marqant.dk"><em>hello@marqant.dk</em></a> — eller ring direkte.
+    </h2>
+    <div class="grid">
+      <div class="col">
+        <div class="label">E-mail</div>
+        <div class="val"><a href="mailto:hello@marqant.dk">hello@marqant.dk</a></div>
+      </div>
+      <div class="col">
+        <div class="label">Telefon</div>
+        <div class="val"><a href="tel:+4500000000">+45 00 00 00 00</a></div>
+      </div>
+      <div class="col">
+        <div class="label">Adresse</div>
+        <div class="val">Bredgade 00<br/>1260 København K</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer class="kolofon">
+  <div class="container row">
+    <div class="left">
+      <span class="wm">Mar<i>q</i>ant</span>
+      <span>· Consulting</span>
+      <span>· Est. MMXXV</span>
+    </div>
+    <div class="right">
+      <span>CVR 00 00 00 00</span>
+      <span>·</span>
+      <span>© MMXXVI</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
