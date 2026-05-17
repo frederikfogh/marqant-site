@@ -84,7 +84,7 @@ Hvis du vil teste live uden Simply:
 
 ## TODO før go-live
 
-- [ ] Indsæt rigtig email (placeholder: `hello@marqant.dk`)
+- [x] Indsæt rigtig email (`frederik@marqant.dk`)
 - [ ] Indsæt rigtigt telefonnummer (placeholder: `+45 00 00 00 00`)
 - [ ] Indsæt rigtig adresse (placeholder: `Bredgade 00, 1260 København K`)
 - [ ] Indsæt rigtigt CVR (placeholder: `00 00 00 00`)
